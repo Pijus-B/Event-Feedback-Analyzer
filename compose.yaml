@@ -1,0 +1,10 @@
+services:
+  analyzer-java:
+    container_name: ${SERVICE_PREFIX}-java
+    build:
+      context: .
+      dockerfile: ./docker/java/Dockerfile
+    environment:
+      - JAVA_XMX=${JAVA_XMX}
+    volumes:
+      - ./logs:/analyzer/logs
