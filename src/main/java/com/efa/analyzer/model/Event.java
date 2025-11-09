@@ -1,62 +1,68 @@
 package com.efa.analyzer.model;
 
 import jakarta.persistence.*;
-import org.springframework.context.annotation.EnableMBeanExport;
-
 import java.time.OffsetDateTime;
 
 @Entity
 @Table(name = "event")
 public class Event {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Integer id;
 
-    @Column(nullable = false)
-    private String name;
+  @Column(nullable = false)
+  private String name;
 
-    @Column(length = 500)
-    private String description;
+  @Column(length = 500)
+  private String description;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
-    private OffsetDateTime createdAt;
+  @Column(name = "created_at", nullable = false, updatable = false)
+  private OffsetDateTime createdAt;
 
-    @PrePersist
-    protected void onCreate() {
-        if (createdAt == null) {
-            createdAt = OffsetDateTime.now();
-        }
+  @PrePersist
+  protected void onCreate() {
+    if (createdAt == null) {
+      createdAt = OffsetDateTime.now();
     }
+  }
 
-    public Integer getId() { return id;}
+  public Integer getId() {
+    return id;
+  }
 
-    public Event setId(Integer id) {
-        this.id = id;
+  public Event setId(Integer id) {
+    this.id = id;
 
-        return this;
-    }
+    return this;
+  }
 
-    public String getName() { return name;}
+  public String getName() {
+    return name;
+  }
 
-    public Event setName(String name) {
-        this.name = name;
+  public Event setName(String name) {
+    this.name = name;
 
-        return this;
-    }
+    return this;
+  }
 
-    public String getDescription() { return description;}
+  public String getDescription() {
+    return description;
+  }
 
-    public Event setDescription(String description) {
-        this.description = description;
+  public Event setDescription(String description) {
+    this.description = description;
 
-        return this;
-    }
+    return this;
+  }
 
-    public OffsetDateTime getCreatedAt() { return createdAt;}
+  public OffsetDateTime getCreatedAt() {
+    return createdAt;
+  }
 
-    public Event setCreatedAt(OffsetDateTime createdAt) {
-        this.createdAt = createdAt;
+  public Event setCreatedAt(OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
 
-        return this;
-    }
+    return this;
+  }
 }
