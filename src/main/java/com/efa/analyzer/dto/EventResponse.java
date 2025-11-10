@@ -3,4 +3,4 @@ package com.efa.analyzer.dto;
 import java.time.OffsetDateTime;
 
 public record EventResponse(
-    Integer id, String name, String description, OffsetDateTime createdAt) {}
+    Integer id, String title, String description, OffsetDateTime createdAt) {}

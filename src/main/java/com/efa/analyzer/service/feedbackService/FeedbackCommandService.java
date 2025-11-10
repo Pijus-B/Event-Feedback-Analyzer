@@ -12,37 +12,38 @@ import com.efa.analyzer.repository.FeedbackRepository;
 import com.efa.analyzer.service.SentimentAnalysisService;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Map;
-
 @Service
 public class FeedbackCommandService {
 
-    private final FeedbackRepository feedbackRepository;
-    private final EventRepository eventRepository;
-    private final FeedbackMapper feedbackMapper;
-    private final SentimentAnalysisService sentimentAnalysisService;
+  private final FeedbackRepository feedbackRepository;
+  private final EventRepository eventRepository;
+  private final FeedbackMapper feedbackMapper;
+  private final SentimentAnalysisService sentimentAnalysisService;
 
-    public FeedbackCommandService(FeedbackRepository feedbackRepository,
-                                  EventRepository eventRepository,
-                                  FeedbackMapper feedbackMapper,
-                                  SentimentAnalysisService sentimentAnalysisService) {
-        this.feedbackRepository = feedbackRepository;
-        this.eventRepository = eventRepository;
-        this.feedbackMapper = feedbackMapper;
-        this.sentimentAnalysisService = sentimentAnalysisService;
-    }
+  public FeedbackCommandService(
+      FeedbackRepository feedbackRepository,
+      EventRepository eventRepository,
+      FeedbackMapper feedbackMapper,
+      SentimentAnalysisService sentimentAnalysisService) {
+    this.feedbackRepository = feedbackRepository;
+    this.eventRepository = eventRepository;
+    this.feedbackMapper = feedbackMapper;
+    this.sentimentAnalysisService = sentimentAnalysisService;
+  }
 
-    public FeedbackResponse create(Integer eventId, FeedbackCreateRequest request) {
-        Event event = eventRepository.findById(eventId)
-                .orElseThrow(() -> new ResourceNotFoundException("Event not found with id: " + eventId));
+  public FeedbackResponse create(Integer eventId, FeedbackCreateRequest request) {
+    Event event =
+        eventRepository
+            .findById(eventId)
+            .orElseThrow(
+                () -> new ResourceNotFoundException("Event not found with id: " + eventId));
 
-        Feedback feedback = feedbackMapper.toEntity(request, event);
+    Feedback feedback = feedbackMapper.toEntity(request, event);
 
-        Sentiment sentiment = sentimentAnalysisService.analyzeSentiment(request.content());
-        feedback.setSentiment(sentiment);
+    Sentiment sentiment = sentimentAnalysisService.analyzeSentiment(request.content());
+    feedback.setSentiment(sentiment);
 
-        Feedback saved = feedbackRepository.save(feedback);
-        return feedbackMapper.toResponse(saved);
-    }
+    Feedback saved = feedbackRepository.save(feedback);
+    return feedbackMapper.toResponse(saved);
+  }
 }

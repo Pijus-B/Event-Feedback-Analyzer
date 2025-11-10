@@ -4,14 +4,14 @@ import jakarta.persistence.*;
 import java.time.OffsetDateTime;
 
 @Entity
-@Table(name = "event")
+@Table(name = "events")
 public class Event {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
 
   @Column(nullable = false)
-  private String name;
+  private String title;
 
   @Column(length = 500)
   private String description;
@@ -36,12 +36,12 @@ public class Event {
     return this;
   }
 
-  public String getName() {
-    return name;
+  public String getTitle() {
+    return title;
   }
 
-  public Event setName(String name) {
-    this.name = name;
+  public Event setTitle(String title) {
+    this.title = title;
 
     return this;
   }

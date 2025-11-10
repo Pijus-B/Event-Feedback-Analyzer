@@ -41,11 +41,11 @@ public class Feedback {
     return this;
   }
 
-  public Event getEventId() {
+  public Event getEvent() {
     return event;
   }
 
-  public Feedback setEventId(Event event) {
+  public Feedback setEvent(Event event) {
     this.event = event;
 
     return this;
