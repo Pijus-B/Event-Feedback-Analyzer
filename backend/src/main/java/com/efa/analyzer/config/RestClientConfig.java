@@ -1,4 +1,4 @@
-package com.efa.analyzer.backend.config;
+package com.efa.analyzer.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

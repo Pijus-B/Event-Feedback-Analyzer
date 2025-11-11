@@ -1,6 +1,6 @@
-package com.efa.analyzer.backend.repository;
+package com.efa.analyzer.repository;
 
-import com.efa.analyzer.backend.model.Event;
+import com.efa.analyzer.model.Event;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

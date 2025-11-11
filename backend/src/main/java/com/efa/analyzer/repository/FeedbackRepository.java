@@ -1,7 +1,7 @@
-package com.efa.analyzer.backend.repository;
+package com.efa.analyzer.repository;
 
-import com.efa.analyzer.backend.enums.Sentiment;
-import com.efa.analyzer.backend.model.Feedback;
+import com.efa.analyzer.enums.Sentiment;
+import com.efa.analyzer.model.Feedback;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

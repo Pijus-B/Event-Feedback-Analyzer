@@ -1,9 +1,9 @@
-package com.efa.analyzer.backend.controller;
+package com.efa.analyzer.controller;
 
-import com.efa.analyzer.backend.dto.FeedbackCreateRequest;
-import com.efa.analyzer.backend.dto.FeedbackResponse;
-import com.efa.analyzer.backend.service.feedbackService.FeedbackCommandService;
-import com.efa.analyzer.backend.service.feedbackService.FeedbackQueryService;
+import com.efa.analyzer.dto.FeedbackCreateRequest;
+import com.efa.analyzer.dto.FeedbackResponse;
+import com.efa.analyzer.service.feedbackService.FeedbackCommandService;
+import com.efa.analyzer.service.feedbackService.FeedbackQueryService;
 import jakarta.validation.Valid;
 import java.util.List;
 import org.springframework.http.HttpStatus;

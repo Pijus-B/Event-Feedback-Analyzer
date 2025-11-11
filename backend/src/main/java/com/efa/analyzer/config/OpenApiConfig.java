@@ -1,4 +1,4 @@
-package com.efa.analyzer.backend.config;
+package com.efa.analyzer.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;

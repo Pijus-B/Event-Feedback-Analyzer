@@ -1,6 +1,6 @@
-package com.efa.analyzer.backend.service;
+package com.efa.analyzer.service;
 
-import com.efa.analyzer.backend.enums.Sentiment;
+import com.efa.analyzer.enums.Sentiment;
 import com.fasterxml.jackson.databind.JsonNode;
 import java.util.Map;
 import org.slf4j.Logger;

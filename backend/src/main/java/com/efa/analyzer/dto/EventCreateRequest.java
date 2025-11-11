@@ -1,4 +1,4 @@
-package com.efa.analyzer.backend.dto;
+package com.efa.analyzer.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

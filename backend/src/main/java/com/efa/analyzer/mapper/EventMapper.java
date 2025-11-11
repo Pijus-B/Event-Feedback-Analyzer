@@ -1,8 +1,8 @@
-package com.efa.analyzer.backend.mapper;
+package com.efa.analyzer.mapper;
 
-import com.efa.analyzer.backend.dto.EventCreateRequest;
-import com.efa.analyzer.backend.dto.EventResponse;
-import com.efa.analyzer.backend.model.Event;
+import com.efa.analyzer.dto.EventCreateRequest;
+import com.efa.analyzer.dto.EventResponse;
+import com.efa.analyzer.model.Event;
 import java.util.List;
 import org.mapstruct.*;
 

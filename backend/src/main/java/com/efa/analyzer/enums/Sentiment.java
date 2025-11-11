@@ -1,4 +1,4 @@
-package com.efa.analyzer.backend.enums;
+package com.efa.analyzer.enums;
 
 public enum Sentiment {
   POSITIVE,

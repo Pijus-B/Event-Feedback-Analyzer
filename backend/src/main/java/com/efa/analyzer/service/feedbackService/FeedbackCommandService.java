@@ -1,15 +1,15 @@
-package com.efa.analyzer.backend.service.feedbackService;
+package com.efa.analyzer.service.feedbackService;
 
-import com.efa.analyzer.backend.dto.FeedbackCreateRequest;
-import com.efa.analyzer.backend.dto.FeedbackResponse;
-import com.efa.analyzer.backend.enums.Sentiment;
-import com.efa.analyzer.backend.exception.ResourceNotFoundException;
-import com.efa.analyzer.backend.mapper.FeedbackMapper;
-import com.efa.analyzer.backend.model.Event;
-import com.efa.analyzer.backend.model.Feedback;
-import com.efa.analyzer.backend.repository.EventRepository;
-import com.efa.analyzer.backend.repository.FeedbackRepository;
-import com.efa.analyzer.backend.service.SentimentAnalysisService;
+import com.efa.analyzer.dto.FeedbackCreateRequest;
+import com.efa.analyzer.dto.FeedbackResponse;
+import com.efa.analyzer.enums.Sentiment;
+import com.efa.analyzer.exception.ResourceNotFoundException;
+import com.efa.analyzer.mapper.FeedbackMapper;
+import com.efa.analyzer.model.Event;
+import com.efa.analyzer.model.Feedback;
+import com.efa.analyzer.repository.EventRepository;
+import com.efa.analyzer.repository.FeedbackRepository;
+import com.efa.analyzer.service.SentimentAnalysisService;
 import org.springframework.stereotype.Service;
 
 @Service

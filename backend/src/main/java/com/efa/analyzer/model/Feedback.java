@@ -1,6 +1,6 @@
-package com.efa.analyzer.backend.model;
+package com.efa.analyzer.model;
 
-import com.efa.analyzer.backend.enums.Sentiment;
+import com.efa.analyzer.enums.Sentiment;
 import jakarta.persistence.*;
 import java.time.OffsetDateTime;
 

@@ -1,6 +1,6 @@
-package com.efa.analyzer.backend.dto;
+package com.efa.analyzer.dto;
 
-import com.efa.analyzer.backend.enums.Sentiment;
+import com.efa.analyzer.enums.Sentiment;
 import java.time.OffsetDateTime;
 
 public record FeedbackResponse(

@@ -1,17 +1,16 @@
-package com.efa.analyzer.backend.service.feedbackService;
+package com.efa.analyzer.service.feedbackService;
 
-import com.efa.analyzer.backend.dto.FeedbackResponse;
-import com.efa.analyzer.backend.exception.ResourceNotFoundException;
-import com.efa.analyzer.backend.mapper.FeedbackMapper;
-import com.efa.analyzer.backend.model.Feedback;
-import com.efa.analyzer.backend.repository.EventRepository;
-import com.efa.analyzer.backend.repository.FeedbackRepository;
+import com.efa.analyzer.dto.FeedbackResponse;
+import com.efa.analyzer.exception.ResourceNotFoundException;
+import com.efa.analyzer.mapper.FeedbackMapper;
+import com.efa.analyzer.model.Feedback;
+import com.efa.analyzer.repository.EventRepository;
+import com.efa.analyzer.repository.FeedbackRepository;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional(readOnly = true)
 public class FeedbackQueryService {
 
   private final FeedbackRepository feedbackRepository;
@@ -27,6 +26,7 @@ public class FeedbackQueryService {
     this.feedbackMapper = feedbackMapper;
   }
 
+  @Transactional
   public List<FeedbackResponse> getAll(Integer eventId) {
     if (!eventRepository.existsById(eventId)) {
       throw new ResourceNotFoundException("Event not found with id: " + eventId);
@@ -35,6 +35,7 @@ public class FeedbackQueryService {
     return feedbackMapper.toResponseList(list);
   }
 
+  @Transactional
   public FeedbackResponse getOne(Integer eventId, Integer feedbackId) {
     if (!eventRepository.existsById(eventId)) {
       throw new ResourceNotFoundException("Event not found with id: " + eventId);

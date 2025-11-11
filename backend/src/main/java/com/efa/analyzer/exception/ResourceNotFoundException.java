@@ -1,4 +1,4 @@
-package com.efa.analyzer.backend.exception;
+package com.efa.analyzer.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
   public ResourceNotFoundException(String message) {

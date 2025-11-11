@@ -1,13 +1,13 @@
-package com.efa.analyzer.backend.service.eventService;
+package com.efa.analyzer.service.eventService;
 
-import com.efa.analyzer.backend.dto.EventResponse;
-import com.efa.analyzer.backend.dto.EventSummaryResponse;
-import com.efa.analyzer.backend.enums.Sentiment;
-import com.efa.analyzer.backend.exception.ResourceNotFoundException;
-import com.efa.analyzer.backend.mapper.EventMapper;
-import com.efa.analyzer.backend.model.Event;
-import com.efa.analyzer.backend.repository.EventRepository;
-import com.efa.analyzer.backend.repository.FeedbackRepository;
+import com.efa.analyzer.dto.EventResponse;
+import com.efa.analyzer.dto.EventSummaryResponse;
+import com.efa.analyzer.enums.Sentiment;
+import com.efa.analyzer.exception.ResourceNotFoundException;
+import com.efa.analyzer.mapper.EventMapper;
+import com.efa.analyzer.model.Event;
+import com.efa.analyzer.repository.EventRepository;
+import com.efa.analyzer.repository.FeedbackRepository;
 import jakarta.transaction.Transactional;
 import java.util.List;
 import org.springframework.stereotype.Service;

@@ -1,9 +1,9 @@
-package com.efa.analyzer.backend.mapper;
+package com.efa.analyzer.mapper;
 
-import com.efa.analyzer.backend.dto.FeedbackCreateRequest;
-import com.efa.analyzer.backend.dto.FeedbackResponse;
-import com.efa.analyzer.backend.model.Event;
-import com.efa.analyzer.backend.model.Feedback;
+import com.efa.analyzer.dto.FeedbackCreateRequest;
+import com.efa.analyzer.dto.FeedbackResponse;
+import com.efa.analyzer.model.Event;
+import com.efa.analyzer.model.Feedback;
 import java.util.List;
 import org.mapstruct.*;
 

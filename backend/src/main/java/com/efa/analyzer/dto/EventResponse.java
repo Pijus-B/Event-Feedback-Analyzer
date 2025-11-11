@@ -1,4 +1,4 @@
-package com.efa.analyzer.backend.dto;
+package com.efa.analyzer.dto;
 
 import java.time.OffsetDateTime;
 
