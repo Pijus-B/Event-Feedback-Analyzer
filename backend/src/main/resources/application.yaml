@@ -19,4 +19,3 @@ spring:
 huggingface:
   api:
     url: https://router.huggingface.co/hf-inference/models/cardiffnlp/twitter-roberta-base-sentiment
-    token: YOUR_HUGGINGFACE_API_TOKEN_HERE
