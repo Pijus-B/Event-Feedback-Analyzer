@@ -21,7 +21,8 @@ Each piece of feedback is classified as Positive, Neutral, or Negative, providin
   - Auto-generated API docs are available at `/v3/api-docs`.
  
 - **Extra(bonus)**
-- 
+  - Implemented a simple UI using React for creating events, submiting events, and displaying the event sentiment summary.
+  - Deployed the project in [Google Cloud](https://event-feedback-analyzer-frontend-react1-328172629172.europe-west1.run.app)
 
 # Getting Started
 Ensure Docker and Docker Compose are installed and running on your machine.
@@ -35,7 +36,7 @@ To access the API, you need to configure a free Hugging Face access token.
 1. Create or sign in https://huggingface.co/ account
 2. Once logged in, navigate to **Settings** and press **Access Tokens**.
 3. Generate a new token with **Read** permissions.
-4. Add it to your environment variables or .env.local file.
+4. Add it to main/src/resources/application.yaml environment file
 
 
    ```
