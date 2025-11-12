@@ -98,22 +98,24 @@ class EventControllerUnitTest {
     }
 
     @Test
-    @DisplayName("GET /api/events/by-title/{title} -> 200 with array (duplicates allowed)")
+    @DisplayName("GET /api/events?title=Hackathon -> 200 with array (duplicates allowed)")
     void get_byTitle_200_withArray() throws Exception {
         OffsetDateTime t = OffsetDateTime.parse("2025-01-01T12:00:00Z");
+
         when(eventQueryService.getAllByTitle("Hackathon"))
                 .thenReturn(List.of(
                         new EventResponse(10, "Hackathon", "desc1", t),
                         new EventResponse(11, "Hackathon", "desc2", t)
                 ));
 
-        mvc.perform(get("/api/events/by-title/{title}", "Hackathon"))
+        mvc.perform(get("/api/events").param("title", "Hackathon"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$", Matchers.hasSize(2)))
                 .andExpect(jsonPath("$[0].title").value("Hackathon"))
                 .andExpect(jsonPath("$[1].title").value("Hackathon"));
     }
+
 
     @Test
     @DisplayName("GET /api/events/{id} -> 200 item")

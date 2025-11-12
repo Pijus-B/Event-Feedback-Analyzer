@@ -34,6 +34,12 @@ public class EventController {
         return eventQueryService.getAll();
     }
 
+    @GetMapping(params = "title")
+    public List<EventResponse> getByTitle(@RequestParam String title)
+    {
+        return eventQueryService.getAllByTitle(title);
+    }
+
     @GetMapping("/{id}")
     public EventResponse get(@PathVariable Integer id) {
         return eventQueryService.getOne(id);
