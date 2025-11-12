@@ -4,7 +4,7 @@ JAVA_XMX: 10g
 spring:
   datasource:
     url: jdbc:h2:mem:analyzerdb
-    username:
+    username: sa
     password:
   jpa:
     hibernate:
@@ -19,4 +19,4 @@ spring:
 huggingface:
   api:
     url: https://router.huggingface.co/hf-inference/models/cardiffnlp/twitter-roberta-base-sentiment
-    token:
+    token: YOUR_HUGGINGFACE_API_TOKEN_HERE
