@@ -16,6 +16,7 @@ public class RestClientConfig {
       @Value("${huggingface.api.url}") String apiUrl,
       @Value("${huggingface.api.token:}") String token) {
 
+
     return builder
         .baseUrl(apiUrl)
         .defaultHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token)

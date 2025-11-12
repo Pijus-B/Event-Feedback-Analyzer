@@ -1,10 +1,33 @@
 services:
-  analyzer-java:
-    container_name: ${SERVICE_PREFIX}-java
+  frontend-react:
+    container_name: frontend-react
     build:
-      context: .
-      dockerfile: ./docker/java/Dockerfile
+      context: ./frontend
+      dockerfile: ./docker/Dockerfile
+      platforms:
+        - linux/amd64
+        - linux/arm64
+    restart: unless-stopped
     environment:
-      - JAVA_XMX=${JAVA_XMX}
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "80:5176"
+
+  analyzer-java:
+    container_name: analyzer-java
+    build:
+      context: ./backend
+      dockerfile: ./docker/java/Dockerfile
+      platforms:
+        - linux/amd64
+        - linux/arm64
+    environment:
+      - JAVA_XMX=10g
     volumes:
       - ./logs:/analyzer/logs
+    ports:
+      - "8081:8080"

@@ -1,8 +1,6 @@
 .PHONY: up up-build up-build-java down down-volumes exec-java
 M2_VOL ?= m2-cache
 
-include .env
-
 export DOCKER_BUILDKIT=1
 export COMPOSE_BAKE=true
 
@@ -24,7 +22,7 @@ down-volumes:
 	@docker compose down -v
 
 exec-java:
-	@docker compose exec $(SERVICE_PREFIX)-java sh
+	@docker compose exec analyzer-java sh
 
 spotless-build:
 	docker build \

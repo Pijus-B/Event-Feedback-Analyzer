@@ -34,7 +34,7 @@ public class EventController {
         return eventQueryService.getAll();
     }
 
-    @GetMapping(params = "title")
+    @GetMapping("/search")
     public List<EventResponse> getByTitle(@RequestParam String title)
     {
         return eventQueryService.getAllByTitle(title);
